@@ -23,8 +23,7 @@ class Home extends Component {
     todo.id = Math.random();
     // Create a array that contains the current array and the new todo item
 
-    const exists = this.state.todos.find(t=>t===todo);
-
+    const exists = this.state.todos.find((t)=>t.content===todo.content);
     if(exists)
     {
       return;
@@ -32,6 +31,8 @@ class Home extends Component {
 
     let new_list = [...this.state.todos, todo];
     // Update the local state with the new array.
+
+    console.log("Array testing: ", new_list);
     
   
     this.setState({
